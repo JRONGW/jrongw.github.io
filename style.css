@@ -4,7 +4,7 @@ body {
   max-width: 900px;
   line-height: 1.6;
   color: #ff8ae0;   /* 🌸 all text is now pink */
-  background-image: url("https://github.com/JRONGW/jrongw.github.io/blob/b9a73d4820f987c62ed864d47c53a23930e8d351/backgroundpink.jpg"); /* replace with your image path */
+  background-image: url("https://github.com/JRONGW/jrongw.github.io/blob/920032e8568df616002bacb0b67661e48b3a217c/backgroundpink.jpg"); /* replace with your image path */
   background-size: cover;   /* make it cover the whole page */
   background-position: center;
   background-attachment: fixed; /* stays still when scrolling */
