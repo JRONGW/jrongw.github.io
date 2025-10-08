@@ -1,14 +1,27 @@
+/* --- Font setup --- */
+@font-face {
+  font-family: "Futura";
+  src: url("Futura.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Futura", sans-serif;
   margin: 40px auto;
   max-width: 900px;
   line-height: 1.6;
-  color: #ff8ae0;   /* 🌸 all text is now pink */
-  background-image: url("https://raw.githubusercontent.com/JRONGW/jrongw.github.io/920032e8568df616002bacb0b67661e48b3a217c/backgroundpink.jpg");
+  color: #ff8ae0;
+  background-image: url("backgroundpink.jpg");
   background-position: center;
-  background-attachment: fixed; /* stays still when scrolling */
+  background-attachment: fixed;
+  background-size: cover;
+
+  /* Cursor for whole page */
+  cursor: url("./icon_whole_1.cur"), auto;
 }
 
+/* --- Header --- */
 header h1 {
   font-size: 3em;
   margin: 0;
@@ -20,6 +33,7 @@ header p {
   color: #ff8ae0;
 }
 
+/* --- Navigation --- */
 nav {
   margin-bottom: 20px;
 }
@@ -30,11 +44,16 @@ nav a {
   font-size: 1.2em;
   font-weight: bold;
   color: #ff8ae0;
-}
-nav a:hover {
-  text-decoration: underline;
+  transition: all 0.2s ease;
 }
 
+/* Custom cursor for links */
+nav a:hover {
+  text-decoration: underline;
+  cursor: url("./icon_clicked_1.cur"), pointer;
+}
+
+/* --- Content section --- */
 .content {
   display: flex;
   align-items: flex-start;
@@ -54,14 +73,16 @@ nav a:hover {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #ff8ae0;  /* border matches text color */
+  border: 2px solid #ff8ae0;
 }
 
+/* --- Divider --- */
 hr {
   margin: 25px 0;
-  border: 1px solid #ff8ae0; /* divider in pink */
+  border: 1px solid #ff8ae0;
 }
 
+/* --- Footer --- */
 footer {
   display: flex;
   flex-wrap: wrap;
