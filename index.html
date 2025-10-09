@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Profile Page - Junrong Wang</title>
-  <link rel="stylesheet" href="./style.css"> 
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -15,39 +15,11 @@
     <div class="clock-item"><span class="dot">●</span> Beijing <span id="clock-cn"></span></div>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // ⏰ Multi-timezone clock updater
-      function updateClocks() {
-        const uk = new Date().toLocaleTimeString("en-GB", {
-          timeZone: "Europe/London",
-          hour: '2-digit', minute: '2-digit', second: '2-digit'
-        });
-        const est = new Date().toLocaleTimeString("en-US", {
-          timeZone: "America/New_York",
-          hour: '2-digit', minute: '2-digit', second: '2-digit'
-        });
-        const cn = new Date().toLocaleTimeString("zh-CN", {
-          timeZone: "Asia/Shanghai",
-          hour: '2-digit', minute: '2-digit', second: '2-digit'
-        });
-
-        document.getElementById("clock-uk").textContent = uk;
-        document.getElementById("clock-est").textContent = est;
-        document.getElementById("clock-cn").textContent = cn;
-      }
-      setInterval(updateClocks, 1000);
-      updateClocks();
-
-      // 💫 Restart marquee animation once everything has loaded
-      const marquee = document.querySelector('.marquee span');
-      if (marquee) {
-        marquee.style.animation = 'none';
-        void marquee.offsetWidth; // reflow forces restart
-        marquee.style.animation = 'scroll-left 25s linear infinite';
-      }
-    });
-  </script>
+  <div class="marquee">
+    <span>
+      ● DESIGN ● TECHNOLOGY ● ENVIRONMENT ● CONNECTED ENVIRONMENTS ● DATA-AIDED PARAMETRIC DESIGN ●
+    </span>
+  </div>
 
 
   <header>
@@ -88,6 +60,8 @@
     <div><span>Contact:</span> junrong.wang.25@ucl.ac.uk</div>
     <div><span>Current Location:</span> UCL East</div>
   </footer>
+
+  <script src="./script.js"></script>
 </body>
 
 </html>
