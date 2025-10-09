@@ -16,32 +16,39 @@
   </div>
 
   <script>
-    function updateClocks() {
-      const uk = new Date().toLocaleTimeString("en-GB", {
-        timeZone: "Europe/London",
-        hour: '2-digit', minute: '2-digit', second: '2-digit'
-      });
-      const est = new Date().toLocaleTimeString("en-US", {
-        timeZone: "America/New_York",
-        hour: '2-digit', minute: '2-digit', second: '2-digit'
-      });
-      const cn = new Date().toLocaleTimeString("zh-CN", {
-        timeZone: "Asia/Shanghai",
-        hour: '2-digit', minute: '2-digit', second: '2-digit'
-      });
+    document.addEventListener("DOMContentLoaded", () => {
+      // ⏰ Multi-timezone clock updater
+      function updateClocks() {
+        const uk = new Date().toLocaleTimeString("en-GB", {
+          timeZone: "Europe/London",
+          hour: '2-digit', minute: '2-digit', second: '2-digit'
+        });
+        const est = new Date().toLocaleTimeString("en-US", {
+          timeZone: "America/New_York",
+          hour: '2-digit', minute: '2-digit', second: '2-digit'
+        });
+        const cn = new Date().toLocaleTimeString("zh-CN", {
+          timeZone: "Asia/Shanghai",
+          hour: '2-digit', minute: '2-digit', second: '2-digit'
+        });
 
-      document.getElementById("clock-uk").textContent = uk;
-      document.getElementById("clock-est").textContent = est;
-      document.getElementById("clock-cn").textContent = cn;
-    }
-    setInterval(updateClocks, 1000);
-    updateClocks();
+        document.getElementById("clock-uk").textContent = uk;
+        document.getElementById("clock-est").textContent = est;
+        document.getElementById("clock-cn").textContent = cn;
+      }
+      setInterval(updateClocks, 1000);
+      updateClocks();
+
+      // 💫 Restart marquee animation once everything has loaded
+      const marquee = document.querySelector('.marquee span');
+      if (marquee) {
+        marquee.style.animation = 'none';
+        void marquee.offsetWidth; // reflow forces restart
+        marquee.style.animation = 'scroll-left 25s linear infinite';
+      }
+    });
   </script>
 
-  <!--  Scrolling Marquee -->
-  <div class="marquee">
-    <span>● DESIGN ● TECHNOLOGY ● ENVIRONMENT ● JUNRONG WANG ● CONNECTED ENVIRONMENTS ● DATA-AIDED PARAMETRIC DESIGN ●</span>
-  </div>
 
   <header>
     <h1>Junrong Wang</h1>
@@ -82,4 +89,5 @@
     <div><span>Current Location:</span> UCL East</div>
   </footer>
 </body>
+
 </html>
