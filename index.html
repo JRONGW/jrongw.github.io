@@ -1,32 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Profile Page - Junrong Wang</title>
-  <link rel="stylesheet" href="style.css"> <!-- comment here -->
+  <link rel="stylesheet" href="style.css"> <!-- All styling handled externally -->
 </head>
+
 <body>
+  <!--  Multi-Time-Zone Clock (UK, EST, Beijing) -->
+  <div class="clock-bar">
+    <div class="clock-item"><span class="dot">●</span> UK <span id="clock-uk"></span></div>
+    <div class="clock-item"><span class="dot">●</span> EST <span id="clock-est"></span></div>
+    <div class="clock-item"><span class="dot">●</span> Beijing <span id="clock-cn"></span></div>
+  </div>
+
+  <script>
+    function updateClocks() {
+      const uk = new Date().toLocaleTimeString("en-GB", {
+        timeZone: "Europe/London",
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      });
+      const est = new Date().toLocaleTimeString("en-US", {
+        timeZone: "America/New_York",
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      });
+      const cn = new Date().toLocaleTimeString("zh-CN", {
+        timeZone: "Asia/Shanghai",
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      });
+
+      document.getElementById("clock-uk").textContent = uk;
+      document.getElementById("clock-est").textContent = est;
+      document.getElementById("clock-cn").textContent = cn;
+    }
+    setInterval(updateClocks, 1000);
+    updateClocks();
+  </script>
+
+  <!--  Scrolling Marquee -->
+  <div class="marquee">
+    <span>● DESIGN ● TECHNOLOGY ● ENVIRONMENT ● JUNRONG WANG ● CONNECTED ENVIRONMENTS ● DATA-AIDED PARAMETRIC DESIGN ●</span>
+  </div>
+
   <header>
     <h1>Junrong Wang</h1>
-    <p>MSc Connected Environments Candidate @ UCL | Master of Landscape Architecture @ RISD | 
-       Bachelor of Agronomy @ Shanghai Jiao Tong University | Interested in AI, IoT, 
-       Data Science and Data-aided Parametric Design</p>
+    <p>
+      MSc Connected Environments Candidate @ UCL <br>
+      Master of Landscape Architecture @ RISD <br>
+      Bachelor of Agronomy @ Shanghai Jiao Tong University <br>
+      Interested in AI, IoT, Data Science, and Data-aided Parametric Design
+    </p>
   </header>
 
   <nav>
-    <a href="https://www.linkedin.com/in/junrong-wang-41a28722a/">LINKEDIN</a>
-    <a href="https://issuu.com/junrongwang/docs/junrong_wang_portfolio_2023">LANDSCAPE ARCHITECTURE PORTFOLIO</a>
-    <a href="https://vissualessayjrw-1.cargo.site/">RISD GRADUATE THESIS WEBSITE</a>
-    <a href="https://uiuxcasestudyjunrongwang.cargo.site/">UIUX DESIGN ASSIGNMENT CASE</a>
-    <a href="https://github.com/JRONGW">GITHUB</a>
+    <a href="https://www.linkedin.com/in/junrong-wang-41a28722a/">- LINKEDIN</a>
+    <a href="https://issuu.com/junrongwang/docs/junrong_wang_portfolio_2023">- LANDSCAPE ARCHITECTURE PORTFOLIO</a>
+    <a href="https://vissualessayjrw-1.cargo.site/">- RISD GRADUATE THESIS WEBSITE</a>
+    <a href="https://uiuxcasestudyjunrongwang.cargo.site/">- UIUX DESIGN ASSIGNMENT CASE</a>
+    <a href="https://github.com/JRONGW">- GITHUB</a>
   </nav>
 
   <div class="content">
     <div class="text">
-      <p>Junrong Wang holds a Master of Landscape Architecture degree at Rhode Island School of Design, 
-         who previously gained her Bachelor's Degree in Agronomy, Landscape Architecture, at 
-         Shanghai Jiao Tong University. Junrong Wang developed her interests in GeoAI, IoT, 
-         Data Analysis and Data-aided Parametric Design.</p>
+      <p>
+        Junrong Wang holds a Master of Landscape Architecture degree at Rhode Island School of Design,
+        who previously gained her Bachelor's Degree in Agronomy, Landscape Architecture, at
+        Shanghai Jiao Tong University. Junrong Wang developed her interests in GeoAI, IoT,
+        Data Analysis and Data-aided Parametric Design.
+      </p>
     </div>
     <div class="avatar">
       <img src="https://i.postimg.cc/LXHHrfL5/3545pink.jpg" alt="Profile Picture">
